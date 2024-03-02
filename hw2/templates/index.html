@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Welcome to the quotes site</h2>
+
+    <h3>Add a quote <a href="{{ url_for('submit') }}">here</a></h3>
+    <h3>See all quotes <a href="{{ url_for('quotes') }}">here</a></h3>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Famous Quotes</h2>
+    <h3>Quotes</h3>
+    {% for entry in entries %}
+        <div class=entry>
+            <blockquote class="quote">
+                 <p>"{{ entry.quote }}"</p>
+                 <cite>-- {{ entry.name }}</cite>
+                 <br>
+                 <div>Submit Date: {{ entry.date }}</div>
+                 <div>Quote source: {{ entry.type }} - {{ entry.source }}</div>
+                 <div>Quote rating: {{ entry.rating }}</div>
+            </blockquote>
+        </div>
+    {% endfor %}
+    <h3>Back to the homepage <a href="{{ url_for("index") }}">here</a></h3>
+{% endblock %}

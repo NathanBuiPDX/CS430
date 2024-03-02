@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="ForecastPage">
+        <h3>Forecast Details for the next 24 Hours</h3>
+        <div class="localDateTime">
+            <p>{{forecastData.dateTime.date}}</p>
+            <p>Local Time {{forecastData.dateTime.time}}</p>
+        </div>
+        <div class="cityGeneralInfo boldStyle">
+            <p>{{forecastData.city}}</p>
+        </div>
+        <div class="detailBlocks">
+            {% for data in forecastData.forecastData %}
+            <div class="detailedForecastInfo">
+                <div class="forecastDetail boldStyle">{{data.time}}</div>
+                <div class="forecastDetail"><span></span>Max: {{data.tempMax}}&deg;{{data.tempUnit}}</div>
+                <div class="forecastDetail">Min: {{data.tempMin}}&deg;{{data.tempUnit}}</div>
+                <div class="forecastDetail boldStyle">{{data.weather}}</div>
+            </div>
+            {% endfor %}
+        </div>
+        </div>
+        <form action="{{ url_for('index') }}" method=get>
+            <button class="buttonSwitch">Switch to Home Page</button>
+        </form>
+    </div>
+{% endblock %}

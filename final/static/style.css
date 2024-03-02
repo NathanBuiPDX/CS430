@@ -1,0 +1,137 @@
+body       { font-family: "Helvetica", sans-serif; font-size: 20px; color: #008303; }
+.page { 
+    margin:.1em auto; 
+    padding:2em; 
+    width: 800px;  
+    text-align: center;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.3);
+}
+.page:before {
+    content: '';
+    background: url('./sunset.jpg') no-repeat center center/cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.searchBar {
+    background-color: rgba(255, 255, 255, 0.251);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    width: 70%;
+    justify-content: center;
+    margin: 10px auto;
+    height: 40px;
+}
+
+.searchInput {
+    border-radius: 30px;
+    border: none;
+    width: 100%;
+    height: 30px;
+    align-items: center;
+    padding-left: 10px;
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+}
+
+.searchInput::placeholder {
+    color: rgba(255, 255, 255, 0.811);
+}
+
+.IndexPage, .ForecastPage {
+    color: white;
+    height: 100%;
+    overflow: auto;
+  }
+
+.hideButton {
+    display: none
+}
+.tempUnit {
+    padding: 0 10px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.tempUnit:hover {
+    cursor: pointer;
+    color: aqua;
+}
+.tempUnit:first-of-type {
+    border-right: 1px solid white;
+}
+
+.detailBlocks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.detailedInfo {
+    box-sizing: border-box;
+    width: 20vw;
+    height: 20vh;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+}
+
+.detailedInfo p {
+    margin-top: 5px;
+}
+
+.detailLabel {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.buttonSwitch {
+    margin-top: 10px;
+    color: white;
+    background-color: #6c757d;
+    padding: 0.75rem 0.5rem;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #6c757d; 
+}
+
+.buttonSwitch:hover {
+    cursor: pointer;
+    background-color: #5e656c;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.detailedForecastInfo {
+    box-sizing: border-box;
+    width: 8vw;
+    height: 20vh;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+}
+
+.forecastDetail {
+    padding: 5px 0;
+}
+
+.boldStyle {
+    font-weight: 700;
+}

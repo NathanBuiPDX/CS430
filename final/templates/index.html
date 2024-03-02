@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="IndexPage">
+        <div>
+            <form action="{{ url_for('index') }}" method=post  class="searchBar">
+                <input
+                    type=text
+                    name=city
+                    class="searchInput"
+                    placeholder="Enter Location"
+                />
+            </form>
+        </div>
+        <div >
+            <form action="{{ url_for('index') }}" method=post>
+                <label for='metrics'  class="tempUnit">
+                    <input
+                        type=submit
+                        name=tempUnit
+                        value=metric
+                        id='metrics'
+                        class='hideButton'
+                    />&deg;C
+                </label>
+                <label for='imperial' class="tempUnit"> 
+                    <input
+                    type=submit
+                    name=tempUnit
+                    value=imperial
+                    id='imperial'
+                    class='hideButton'
+                    />&deg;F
+                </label>
+            </form>
+        </div>
+        <div class="localDateTime">
+            <p>{{data.dateTime.date}}</p>
+            <p>Local Time {{data.dateTime.time}}</p>
+        </div>
+        <div class="cityGeneralInfo">
+            <p>{{data.name}}</p>
+            <p>{{data.main.temp}} &deg;{{data.tempUnit}}</p>
+            <p>{{data.weather[0].main}}</p>
+        </div>
+        <div class="detailBlocks">
+            <div class="detailedInfo">
+                <div class="detailLabel">Min Temp</div>
+                <p>{{data.main.temp_min}} &deg;{{data.tempUnit}}</p>
+                
+            </div>
+            <div class="detailedInfo">
+                <div class="detailLabel">Max Temp</div>
+                <p>{{data.main.temp_max}} &deg;{{data.tempUnit}}</p>
+                
+            </div>
+            <div class="detailedInfo">
+                <div class="detailLabel">Humidity</div>
+                <p>{{data.main.humidity}}%</p>
+            </div>
+            <div class="detailedInfo">
+                <div class="detailLabel">Wind Speed</div>
+                <p>{{data.wind.speed}} mph</p>
+            </div>
+        </div>
+        <form action="{{ url_for('forecast') }}" method=get>
+            <button  class="buttonSwitch">Forecast Details</button>
+        </form>
+    </div>
+{% endblock %}

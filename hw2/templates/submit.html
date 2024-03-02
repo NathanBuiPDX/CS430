@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Add a new quote</h2>
+    <form action="{{ url_for('submit') }}" method=post>
+        <p class="heading">Quote:
+            <textarea rows=5 cols=50 name=quote></textarea>
+        </p>
+        <p class="heading">Name: <input type=text name=name></p>
+        <p class="heading">Quote's type: <input type=text name=type></p>
+        <p class="heading">Quote's source: <input type=text name=source></p>
+        <p class="heading">Quote rating: <input type=number name=rating></p>
+        <p><input type=submit value=Submit></p>
+    </form>
+    <h3>Back to the homepage <a href="{{ url_for("index") }}">here</a></h3>
+{% endblock %}
